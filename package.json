@@ -1,0 +1,41 @@
+{
+  "name": "@bharatmaps/web-sdk",
+  "version": "0.1.1",
+  "description": "Bharat Maps Web SDK: interactive vector maps for the browser.",
+  "type": "module",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bharatmap/web-sdk.git"
+  },
+  "homepage": "https://maps.bharat-maps.com",
+  "bugs": {
+    "url": "https://github.com/bharatmap/web-sdk/issues"
+  },
+  "module": "dist/bharatmaps.mjs",
+  "types": "dist/bharatmaps.d.ts",
+  "style": "dist/bharatmaps.css",
+  "exports": {
+    ".": {
+      "types": "./dist/bharatmaps.d.ts",
+      "import": "./dist/bharatmaps.mjs"
+    },
+    "./styles.css": "./dist/bharatmaps.css",
+    "./worker": "./dist/bharatmaps-worker.mjs",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@types/geojson": "7946.0.16",
+    "gl-matrix": "3.4.4"
+  },
+  "files": [
+    "dist/",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.txt",
+    "licenses/"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ]
+}
