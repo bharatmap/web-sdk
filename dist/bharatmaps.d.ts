@@ -39524,6 +39524,8 @@ type BharatLicenseClientOptions = {
   gatewayUrl: string;
   /** Explicitly permits HTTP loopback services for an isolated development environment. */
   allowLocalDevelopment?: boolean;
+  /** Render licensed background while Turnstile authorizes details. */
+  backgroundFirst?: boolean;
   getEvidence: (challenge: BharatWebChallenge, signal: AbortSignal) => Promise<string>;
   onStateChange?: (state: BharatLicenseState, error?: BharatLicenseError) => void;
 };
@@ -39543,11 +39545,13 @@ export declare class BharatLicenseClient {
   private keyPromise;
   private session?;
   private authorizing?;
+  private detailAuthorization?;
   private active;
   private waiting;
   private cooldown;
   private blocked?;
   private offset;
+  private refreshTimer?;
   state: BharatLicenseState;
   constructor(options: BharatLicenseClientOptions);
   private update;
@@ -39555,6 +39559,9 @@ export declare class BharatLicenseClient {
   private error;
   private post;
   private ensureSession;
+  private acceptSession;
+  private authorizeDetails;
+  readyDetails(): Promise<void>;
   ready(): Promise<void>;
   refresh(): Promise<void>;
   get sessionId(): string | undefined;

@@ -1,6 +1,6 @@
 # Bharat Maps Web SDK
 
-Interactive vector maps for the browser. Version 0.1.1.
+Interactive vector maps for the browser. Version 0.1.5.
 
 This repository distributes compiled SDK files, TypeScript declarations, documentation,
 examples and license notices. SDK development sources are maintained separately.
@@ -8,7 +8,7 @@ examples and license notices. SDK development sources are maintained separately.
 ## Install
 
 ```sh
-npm install @bharatmaps/web-sdk@0.1.1
+npm install @bharatmaps/web-sdk@0.1.5
 ```
 
 The versioned npm-compatible archive and checksums are also available in
